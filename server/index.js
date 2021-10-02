@@ -4,6 +4,12 @@ require("dotenv").config();
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
+import passport from "passport";
+
+//config
+import googleAuthConfig from "./config/google.config";
+
+
 
 //API
 import Auth from "./API/Auth";
