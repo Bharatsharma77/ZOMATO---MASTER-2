@@ -24,6 +24,10 @@ zomato.use(express.urlencoded({extended: false}));
 zomato.use(helmet());
 zomato.use(cors());
 
+
+//passport configuration
+googleAuthConfig(passport);
+
 //For application routes
 //localhost:4000/auth/signup
 zomato.use("/auth", Auth);
