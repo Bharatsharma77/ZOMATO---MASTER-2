@@ -45,6 +45,28 @@ Router.get("/:_id", async(req,res) => {
   });
   
   
+  /*
+Route            /search
+Des              Get Restaurant details search
+Params           none
+Body             searchString
+Access           Public
+Method           GET
+*/
+/*xxxxyyyyyaaaabbbbb*/
+Router.get("/search", async(req,res)=> {
+  try {
+    const {searchString} = req.body;
+
+    const restaurants = await RestaurantModel.find({
+      name: {$regex: searchString, $options: "i"},
+    });
+  } catch (error) {
+    return res.status(500).json({error: error.message});
+  }
+} );
+
+  
 
 export default Router;
 
