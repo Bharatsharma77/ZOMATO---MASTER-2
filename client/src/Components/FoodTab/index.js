@@ -156,7 +156,7 @@ const FoodTab = () => {
         <LargeTabs />
       </div>
     </>
-  );
+  ); 
 };
 
 export default FoodTab;

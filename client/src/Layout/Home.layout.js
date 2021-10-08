@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
-//Components
+// Components
 import Navbar from "../Components/Navbar";
- 
+import FoodTab from "../Components/FoodTab";
+
+// redux action
+//import { getCart } from "../Redux/Reducer/Cart/Cart.action";
+
 const HomeLayout = (props) => {
-  return <>
-  <Navbar />
-   <div className="container mx-auto lg:px-20">
-   {props.children}
-   </div>
-  </>
+  //const dispatch = useDispatch();
+
+  return (
+    <>
+      <Navbar />
+      <div className="container mx-auto px-4 lg:px-20 ">{props.children}</div>
+      <FoodTab />
+     
+    </>
+  );
 };
 
 export default HomeLayout;
