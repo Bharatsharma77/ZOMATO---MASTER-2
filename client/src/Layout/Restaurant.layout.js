@@ -9,7 +9,11 @@ import RestaurantNavbar from "../Components/Navbar/restaurantNavbar";
 import ImageGrid from "../Components/restaurant/ImageGrid";
 import InfoButtons from "../Components/restaurant/InfoButtons";
 import RestaurantInfo from "../Components/restaurant/RestaurantInfo";
-const RestaurantLayout = () => {
+import TabContainer from "../Components/restaurant/Tabs";
+//import CartContainer from "../Components/Cart/CartContainer";
+
+
+const RestaurantLayout = (props) => {
     return (
         <>
         {" "}
@@ -45,10 +49,13 @@ const RestaurantLayout = () => {
           <InfoButtons>
             <RiShareForwardLine /> Share
           </InfoButtons>
+
         </div>
-    </div>
-
-
+        <div className="my-10">
+          <TabContainer></TabContainer>
+        </div>
+        {props.children}
+      </div>
 </>
     );
 };
