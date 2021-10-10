@@ -1,15 +1,31 @@
+import { Route, Redirect, Switch } from "react-router-dom";
+
+
+
+
 //HOC
 import HomeLayoutHOC from "./HOC/Home.HOC";
+import RestaurantLayoutHOC from "./HOC/Restaurant.HOC";
+//import CheckoutLayoutHOC from "./HOC/Checkout.Hoc";
 
 //Component
 import Temp from "./Components/temp";
-import Master from "./Components/master";
+
+
+
+
+//pages
+import Home from "./Page/Home";
 
 function App() {
   return (
     <>
-    <HomeLayoutHOC path="/" exact component={Temp}/>
-    <HomeLayoutHOC path="/:type" exact component={Master}/>
+      <Route path="/" exact>
+        <Redirect to="/delivery" />
+      </Route>
+
+    <HomeLayoutHOC path="/:type" exact component={Home}/>
+    <RestaurantLayoutHOC path="/restaurant/:id" exact component={Home}/>
     </>
   )
 }
