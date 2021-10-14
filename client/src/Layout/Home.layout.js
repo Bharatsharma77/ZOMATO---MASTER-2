@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
-//import { useDispatch } from "react-redux";
+import { useParams} from "react-router-dom";
+import { useDispatch } from "react-router";
 
 // Components
 import Navbar from "../Components/Navbar";
@@ -7,9 +8,15 @@ import FoodTab from "../Components/FoodTab";
 
 // redux action
 //import { getCart } from "../Redux/Reducer/Cart/Cart.action";
+import { getRestaurant } from "../Redux/Reducer/restaurant/restaurant.action";
 
 const HomeLayout = (props) => {
-  //const dispatch = useDispatch();
+  const dispatch = useDispatch();
+
+useEffect(()=> {
+  dispatch(getRestaurant());
+}, []
+);
 
   return (
     <>

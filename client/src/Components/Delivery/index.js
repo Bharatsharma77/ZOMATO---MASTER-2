@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-//import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 // components
 import DeliveryCarousal from "./DeliveryCarousal";
@@ -52,13 +52,13 @@ import RestaurantCard from "../RestaurantCard";
 
   ]);
 
-  //const reduxState = useSelector(
-   // (globalStore) => globalStore.restaurant.restaurants
- // );
+  const reduxState = useSelector(
+    (globalStore) => globalStore.restaurant.restaurants
+  );
 
-  //useEffect(() => {
-   // reduxState.restaurants && setRestaurantList(reduxState.restaurants);
-  //}, [reduxState.restaurants]);
+  useEffect(() => {
+    setRestaurantList(reduxState.restaurants);
+  }, [reduxState.restaurants]);
 
   return (
     <>
